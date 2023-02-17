@@ -39,3 +39,15 @@ export const user = async (req: any) => {
   };
   return message;
 };
+
+export const getUser = async (req: any) => {
+  // Get User email
+  const email = req.params.email;
+
+  const message = {
+    status: 200,
+    message: "ok",
+    result: { email },
+  };
+  return message;
+};
