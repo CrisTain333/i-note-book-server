@@ -31,7 +31,7 @@ export const user = async (req: any) => {
 
   const message = {
     status: 200,
-    message: "ok",
+    message: "User Saved",
     result: {
       result,
       token,
@@ -42,12 +42,13 @@ export const user = async (req: any) => {
 
 export const getUser = async (req: any) => {
   // Get User email
-  const email = req.params.email;
-
+  const emailAddress = req.params.email;
+  const user = await userCollection.findOne({ email: emailAddress });
+  const { name, profilePicture, email } = user;
   const message = {
     status: 200,
-    message: "ok",
-    result: { email },
+    message: "User Sended",
+    result: { name, profilePicture, email },
   };
   return message;
 };
