@@ -31,7 +31,7 @@ export const user = async (req: any) => {
 
   const message = {
     status: 200,
-    message: "ok",
+    message: "User Saved",
     result: {
       result,
       token,
@@ -47,7 +47,7 @@ export const getUser = async (req: any) => {
   const { name, profilePicture, email } = user;
   const message = {
     status: 200,
-    message: "ok",
+    message: "User Sended",
     result: { name, profilePicture, email },
   };
   return message;
