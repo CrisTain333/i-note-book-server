@@ -28,7 +28,7 @@ export const getNotes = async (req: any) => {
   const message = {
     status: 200,
     message: "ok",
-    result: userNotes,
+    result: { userNotes },
   };
   return message;
 };
