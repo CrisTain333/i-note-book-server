@@ -1,7 +1,8 @@
 import express from "express";
-import { saveNotes } from "./controler";
+import { getNotes, saveNotes } from "./controler";
 const router = express.Router();
 
 router.post("/", saveNotes);
+router.get("/:email", getNotes);
 
 export default router;
