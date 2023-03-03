@@ -16,11 +16,10 @@ export const saveNotes = async (req: any) => {
   return message;
 };
 
-// Get User Notes
+// Get User Note
 
 export const getNotes = async (req: any) => {
   const email = req.params.email;
-  console.log(email);
   const userNotes = await usersNoteCollection
     .find({ userEmail: email })
     .toArray();
@@ -29,6 +28,20 @@ export const getNotes = async (req: any) => {
     status: 200,
     message: "ok",
     result: { userNotes },
+  };
+  return message;
+};
+
+export const getSingleNote = async (req: any) => {
+  const id = req.params.id;
+  const result = await usersNoteCollection
+    .find({ _id: ObjectId(id) })
+    .toArray();
+  console.log(result);
+  const message = {
+    status: 200,
+    message: "ok",
+    result,
   };
   return message;
 };
