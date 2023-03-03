@@ -16,7 +16,7 @@ export const saveNotes = async (req: any) => {
   return message;
 };
 
-// Get User Notes
+// Get User Note
 
 export const getNotes = async (req: any) => {
   const email = req.params.email;
